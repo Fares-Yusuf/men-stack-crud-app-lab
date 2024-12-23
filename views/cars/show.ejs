@@ -1,0 +1,41 @@
+<!-- views/cars/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= car.name %>
+    </title> <!-- Dynamic title based on car name -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <h1>
+        <%= car.name %>
+    </h1>
+    <% if(car.isFourWheelDrive){ %>
+        <p>This car is four wheel drive!</p>
+        <% } else { %>
+            <p>This car is not four wheel drive!</p>
+            <% } %>
+                <!-- new delete button -->
+                <div class="car-actions">
+                    <form class="delete-form" action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+                        <button class="delete-button" type="submit">
+                            Delete <%= car.name %>
+                        </button>
+                    </form>
+                    <a class="edit-link" href="/cars/<%= car._id %>/edit">
+                        <div class="edit-text">Edit <%= car.name %>
+                        </div>
+                    </a>
+                </div>
+                <a class="cars-index-link" href="/cars">
+                    <div class="index-link-text">Back to Cars</div>
+                </a>
+</body>
+
+</html>

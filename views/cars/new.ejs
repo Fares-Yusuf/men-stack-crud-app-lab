@@ -1,0 +1,30 @@
+<!-- views/cars/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Car</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<!-- views/cars/new.ejs -->
+
+<body>
+    <!-- views/cars/new.ejs -->
+    <a href="/cars/">Back to Cars</a>
+
+    <h1>Create a New Car!</h1>
+    <form action="/cars" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+
+        <label for="isFourWheelDrive">Four Wheel Drive?</label>
+        <input type="checkbox" name="isFourWheelDrive" id="isFourWheelDrive" />
+
+        <button type="submit">Add Car</button>
+    </form>
+</body>
+
+</html>

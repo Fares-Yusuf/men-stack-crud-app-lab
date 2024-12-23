@@ -1,0 +1,39 @@
+<!-- views/cars/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Car</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<!-- views/cars/new.ejs -->
+
+<body>
+    <div class="car-details">
+        <!-- update the header -->
+        <h1>Edit <%= car.name %>
+        </h1>
+        <!-- updated form -->
+
+        <form action="/cars/<%=car._id%>?_method=PUT" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="<%= car.name %>" />
+
+            <div class="checkbox-div">
+                <label for="four wheel drive">four wheel drive?</label>
+                <input type="checkbox" name="isFourWheelDrive" <% if (car.isFourWheelDrive) { %>checked<% } %> >
+            </div>
+
+            <button type="submit">Update Car</button>
+        </form>
+    </div>
+
+    <a class="cars-index-link" href="/cars">
+        <div class="index-link-text">Back to Cars</div>
+    </a>
+</body>
+
+</html>
